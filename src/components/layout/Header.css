@@ -363,7 +363,7 @@
   }
 
   .header-cta {
-    display: none;
+    display: none !important;
   }
 
   /* Menu Button */
@@ -435,8 +435,7 @@
 
 @media (max-width: 900px) {
   .header-cta {
-    font-size: 0.65rem;
-    padding: 0.6rem 1rem;
+    display: none !important;
   }
 
   .menu-btn {
