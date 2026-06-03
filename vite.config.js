@@ -5,26 +5,26 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Minify bundle
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console logs in production
-      },
-    },
-    // Generate source maps for production debugging
+    // Minify with esbuild (default, more compatible)
+    minify: 'esbuild',
     sourcemap: false,
     // Optimize chunk splitting
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor': ['react', 'react-dom', 'react-router-dom'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) {
+              return 'react-vendor';
+            }
+            if (id.includes('react-router')) {
+              return 'router-vendor';
+            }
+            return 'vendor';
+          }
         },
       },
     },
-    // Report compressed file size
     reportCompressedSize: true,
-    // Chunk size warning
     chunkSizeWarningLimit: 500,
   },
   // Optimize dependencies
