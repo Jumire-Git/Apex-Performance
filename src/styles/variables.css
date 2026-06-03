@@ -1,0 +1,54 @@
+:root {
+  /* === Color Palette === */
+  --color-bg: #0a0a0c;
+  --color-bg-secondary: #0f0f12;
+  --color-bg-tertiary: #161619;
+  --color-bg-card: #121215;
+
+  --color-text: #f2f0eb;
+  --color-text-secondary: #8a8a8f;
+  --color-text-muted: #4a4a50;
+
+  /* Gold System */
+  --color-gold: #c9a84c;
+  --color-gold-light: #e2c97e;
+  --color-gold-dim: rgba(201, 168, 76, 0.1);
+  --color-gold-border: rgba(201, 168, 76, 0.22);
+
+  --color-border: rgba(255, 255, 255, 0.055);
+  --color-border-hover: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-heading: 'Outfit', 'DM Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radii */
+  --radius-sm: 3px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-pill: 100px;
+
+  /* Transitions */
+  --transition-fast: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-menu: 650ms cubic-bezier(0.76, 0, 0.24, 1);
+}

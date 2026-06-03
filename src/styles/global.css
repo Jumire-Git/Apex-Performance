@@ -1,0 +1,158 @@
+@import './variables.css';
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@400;600;700;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* When the fullscreen menu is open, lock body scroll */
+body.menu-open { overflow: hidden; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+}
+
+/* Serif accent — the legacyfit.com editorial contrast trick */
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img, video { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+
+/* ===== LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+/* ===== TEXT UTILITIES ===== */
+.text-gold { color: var(--color-gold); }
+
+.text-gradient {
+  background: linear-gradient(135deg, #f2f0eb 0%, var(--color-gold-light) 60%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-muted { color: var(--color-text-secondary); }
+
+.overline {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.78rem;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-gold) 0%, #a8882a 100%);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(201, 168, 76, 0.28);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-border-hover);
+  color: var(--color-text);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-gold-border);
+  color: var(--color-gold);
+  background: var(--color-gold-dim);
+}
+
+/* ===== SECTION ===== */
+.section { padding: var(--space-24) 0; }
+
+.section-header { margin-bottom: var(--space-16); }
+.section-header.center { text-align: center; }
+.section-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); text-transform: uppercase; }
+
+.gold-divider {
+  width: 42px; height: 2px;
+  background: var(--color-gold);
+  margin: var(--space-5) 0;
+}
+.gold-divider.center { margin: var(--space-5) auto; }
+
+.section-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.78;
+  max-width: 580px;
+  margin-top: var(--space-4);
+}
+.section-header.center .section-subtitle { margin-left: auto; margin-right: auto; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
